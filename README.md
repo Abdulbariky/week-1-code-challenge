@@ -47,7 +47,7 @@ This website has been developed using:
 
 ## live link
 
-[my tours website](https://abdulbariky.github.io/my-tours-website/)
+[week-1-code-challenge](https://abdulbariky.github.io/week-1-code-challenge/)
 
  
  ### Requirements Needed
