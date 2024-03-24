@@ -23,7 +23,7 @@ function nhifCalc() {
     if (basicSalary >= 600 && basicSalary <= 5999) {
         nhif = 150
     }
-    // More conditions for different basic salary ranges
+    //  conditions for different basic salary ranges
     else if (basicSalary >= 6000 && basicSalary <= 7999) {
         nhif = 300
     } else if (basicSalary >= 8000 && basicSalary <= 11999) {
@@ -103,13 +103,13 @@ function payeeCalc() {
     let benefits = document.querySelector("#benefits").value
     basicSalary = parseFloat(basicSalary)
     benefits = parseFloat(benefits)
-    // Define constant values
+    
     let personalRelief = 2400
     let insuranceRelief = insuranceReliefCalc()
     let nssf = nssfCalc()
-    // Calculate taxable pay
+    // Calculating taxable pay
     taxablePay = basicSalary - benefits - nssf
-    // Calculate payee based on taxable pay range
+    
     if (taxablePay === 24001) {
         payee = 2400 - personalRelief - insuranceRelief
     } else if (taxablePay > 24001 && taxablePay <= 32333) {
@@ -119,7 +119,7 @@ function payeeCalc() {
     } else {
         payee = 0
     }
-    // Return the calculated payee
+    
     return payee
 
 }
@@ -130,11 +130,11 @@ function netPayCalc() {
     let benefits = document.querySelector("#benefits").value
     basicSalary = parseFloat(basicSalary)
     benefits = parseFloat(benefits)
-    // Get payee and NSSF and NHIF values
+    // Getting payee and NSSF and NHIF values
     let payee = payeeCalc()
     let nssf = nssfCalc()
     let nhif = nhifCalc()
-    // Calculate net pay
+    // Calculating net pay
     netPay = basicSalary - benefits - payee - nssf - nhif
     if (netPay < 0) {
         netPay = 0
@@ -144,7 +144,7 @@ function netPayCalc() {
     return Math.round(netPay)
 }
 
-//  Event listeners for input fields
+// adding the Eventlisteners to input fields
 function calc() {
     let basicSalary = document.querySelector("#salary").value
     let benefits = document.querySelector("#benefits").value
@@ -198,5 +198,5 @@ function calc() {
     
 }
 
-// add event listener to  button 
+// adding the eventlistener to  button 
 button.addEventListener('click', calc)
