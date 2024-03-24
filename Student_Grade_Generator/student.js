@@ -22,6 +22,22 @@ function check() {
      percentage.innerHTML = ``
 
  } 
+  // checks for other condition
+  else {
+    if (average > 79 && average <= 100) {
+        grade.innerHTML = `Grade: A`
+    } else if (average > 60 && average <= 79) {
+        grade.innerHTML = `Grade: B`
+    } else if (average > 49 && average <= 60) {
+        grade.innerHTML = `Grade: C`
+    } else if (average > 40 && average <= 49) {
+        grade.innerHTML = `Grade: D`
+    } else {
+        grade.innerHTML = `Grade: E`
+    }
+    totalMarks.innerHTML = `Total Marks : ${sum} out of 400`
+    percentage.innerHTML = `Percentage : ${Math.round(average)}%`
+}
 
 
 
@@ -31,6 +47,6 @@ function check() {
 
 
 
- 
+
 
 }
