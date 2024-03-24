@@ -143,3 +143,57 @@ function netPayCalc() {
     }
     return Math.round(netPay)
 }
+
+//  Event listeners for input fields
+function calc() {
+    let basicSalary = document.querySelector("#salary").value
+    let benefits = document.querySelector("#benefits").value
+    basicSalary = parseFloat(basicSalary)
+    benefits = parseFloat(benefits)
+    let nssf = nssfCalc()
+    let nhif = nhifCalc()
+    let personalRelief = 2400
+    let insuranceRelief = insuranceReliefCalc()
+    let payee = payeeCalc()
+    let netPay = netPayCalc()
+    const output = document.querySelector(".output")
+    output.innerHTML = `<table>
+    <tr><td> <h2>Gross Pay</h2></td>
+        <td><h2>${basicSalary}</h2></td>
+    </tr>
+    <tr>
+        <td><h2>Contribution Benefit</h2></td>
+        <td><h2>${benefits}</h2></td>
+    </tr>
+    <tr>
+        <td> <h2>NHIF Deductions</h2></td>
+        <td><h2>${nhif}</h2></td>
+    </tr>
+
+    <tr>
+        <td> <h2>NSSF Deductions</h2></td>
+        <td><h2>${nssf}</h2></td>
+    </tr>
+
+    <tr>
+        <td> <h2>Insurance Relief</h2></td>
+        <td><h2>${insuranceRelief}</h2></td>
+    </tr>
+
+    <tr>
+    <td> <h2>Personal Relief</h2></td>
+    <td><h2>${personalRelief}</h2></td>
+     </tr>
+
+
+    <tr>
+        <td><h2>Payee</h2></td>
+        <td><h2>${payee}</h2></td>
+    </tr>
+    <tr>
+        <td><h2>Net salary</h2></td>
+        <td><h2>${netPay}</h2></td>
+    </tr>
+    </table>`
+    
+}
