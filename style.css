@@ -1,0 +1,13 @@
+body {
+    background-color: bisque;
+
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-content: end;
+    font-size: 30px;
+}
