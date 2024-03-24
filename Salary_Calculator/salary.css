@@ -2,3 +2,68 @@ body {
     background: #f9f9f9;
     font-family: "Poppins", sans-serif;
 }
+
+.net\_salary\_calc h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px 0 #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inputs h2 {
+    margin: 0 0 10px;
+}
+
+.inputs input {
+    padding: 18px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.benefits {
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 20px 20px;
+    background: linear-gradient(to right, #20a8d8, #0085cc);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #0085cc, #20a8d8);
+}
+
+.output {
+    margin: 8px 0;
+    padding: 8px;
+    background: #f4f7f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.output p {
+    margin: 0;
+    font-size: 10px;
+}
