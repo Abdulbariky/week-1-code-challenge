@@ -88,3 +88,38 @@ function nssfCalc() {
     return nssf
 
 }
+
+// Function to calculate insurance relief
+function insuranceReliefCalc() {
+    nhif = nhifCalc()
+    insuranceRelief = Math.round(0.15 * nhif)
+    return insuranceRelief
+
+}
+
+// Function to calculate Payee
+function payeeCalc() {
+    let basicSalary = document.querySelector("#salary").value
+    let benefits = document.querySelector("#benefits").value
+    basicSalary = parseFloat(basicSalary)
+    benefits = parseFloat(benefits)
+    // Define constant values
+    let personalRelief = 2400
+    let insuranceRelief = insuranceReliefCalc()
+    let nssf = nssfCalc()
+    // Calculate taxable pay
+    taxablePay = basicSalary - benefits - nssf
+    // Calculate payee based on taxable pay range
+    if (taxablePay === 24001) {
+        payee = 2400 - personalRelief - insuranceRelief
+    } else if (taxablePay > 24001 && taxablePay <= 32333) {
+        payee = Math.round(2400 + 0.25 * (taxablePay - 24001) - personalRelief - insuranceRelief)
+    } else if (taxablePay > 32333) {
+        payee = Math.round(2400 + 0.25 * (32333 - 24000) + 0.3 * (taxablePay - 32333) - personalRelief - insuranceRelief)
+    } else {
+        payee = 0
+    }
+    // Return the calculated payee
+    return payee
+
+}
