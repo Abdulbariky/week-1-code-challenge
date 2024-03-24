@@ -123,3 +123,23 @@ function payeeCalc() {
     return payee
 
 }
+
+// Function to calculate net pay
+function netPayCalc() {
+    let basicSalary = document.querySelector("#salary").value
+    let benefits = document.querySelector("#benefits").value
+    basicSalary = parseFloat(basicSalary)
+    benefits = parseFloat(benefits)
+    // Get payee and NSSF and NHIF values
+    let payee = payeeCalc()
+    let nssf = nssfCalc()
+    let nhif = nhifCalc()
+    // Calculate net pay
+    netPay = basicSalary - benefits - payee - nssf - nhif
+    if (netPay < 0) {
+        netPay = 0
+    } else {
+        netPay = netPay
+    }
+    return Math.round(netPay)
+}
