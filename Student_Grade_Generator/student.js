@@ -39,14 +39,7 @@ function check() {
     percentage.innerHTML = `Percentage : ${Math.round(average)}%`
 }
 
-
-
-
-
-
-
-
-
-
-
 }
+
+// Adds event listener to the button
+button.addEventListener("click", check)
