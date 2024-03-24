@@ -62,3 +62,29 @@ function nhifCalc() {
     }
     return nhif
 }
+
+// Function to calculate NSSF contribution
+function nssfCalc() {
+    // Get basic salary value from HTML
+    let basicSalary = document.querySelector("#salary").value
+    // Convert string to number
+    basicSalary = parseFloat(basicSalary)
+    // If basic salary is between 1000 and 7000
+    if (basicSalary > 1000 && basicSalary <= 7000) {
+        // Set NSSF to 420
+        nssf = 420
+
+    } // If basic salary is between 7001 and 36000
+    else if (basicSalary > 7000 && basicSalary <= 36000) {
+        // Calculate NSSF based on 6% of basic salary
+        nssf = Math.round(420 + 0.06 * (basicSalary - 7000))
+
+    }// Fixed amount for this range
+    else if (basicSalary > 36000) {
+        nssf = 2160
+    } else {
+        nssf = 0
+    }
+    return nssf
+
+}
