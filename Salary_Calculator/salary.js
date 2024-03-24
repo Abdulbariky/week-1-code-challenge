@@ -197,3 +197,6 @@ function calc() {
     </table>`
     
 }
+
+// add event listener to  button 
+button.addEventListener('click', calc)
